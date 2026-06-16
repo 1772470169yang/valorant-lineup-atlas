@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lineup Atlas</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f1923'/%3E%3Cpath d='M16 46 29 14h8L24 46zM36 46l4-10h9l-4 10z' fill='%2343d9bd'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css?v=20260616-details-actions" />
   </head>
   <body data-theme="dark">
     <div class="app-shell">
@@ -25,10 +26,10 @@
             <button class="active" type="button" data-theme-option="dark">黑色</button>
             <button type="button" data-theme-option="light">白色</button>
           </div>
-          <select aria-label="Language">
-            <option>中文</option>
-            <option>English</option>
-            <option>日本語</option>
+          <select class="language-select" aria-label="Language">
+            <option value="zh" selected>中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
           </select>
           <button class="profile-button" type="button" aria-label="Profile">R</button>
         </nav>
@@ -59,7 +60,6 @@
                 <option>Abyss</option>
                 <option>Corrode</option>
               </select>
-              <small class="map-count">8 lineups</small>
             </label>
           </section>
 
@@ -195,62 +195,22 @@
             <div class="map-canvas">
               <div class="rotating-map-layer">
                 <img class="map-art" src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/displayicon.png" alt="Ascent tactical map with lineup pins" draggable="false" />
-                <div class="callout-label" style="left: 30%; top: 16%">A Site</div>
-                <div class="callout-label" style="left: 23%; top: 13%">A Heaven</div>
-                <div class="callout-label" style="left: 30%; top: 19%">Generator</div>
-                <div class="callout-label" style="left: 36%; top: 25%">A Door</div>
-                <div class="callout-label" style="left: 28%; top: 31%">Garden</div>
-                <div class="callout-label" style="left: 39%; top: 31%">Tree</div>
-                <div class="callout-label" style="left: 43%; top: 18%">A Main</div>
-                <div class="callout-label" style="left: 48%; top: 8%">Wine</div>
-                <div class="callout-label" style="left: 50%; top: 15%">A Lobby</div>
-                <div class="callout-label" style="left: 52%; top: 43%">Pizza</div>
-                <div class="callout-label" style="left: 53%; top: 51%">Market</div>
-                <div class="callout-label" style="left: 53%; top: 58%">Mid</div>
-                <div class="callout-label" style="left: 62%; top: 34%">Catwalk</div>
-                <div class="callout-label" style="left: 70%; top: 64%">Top Mid</div>
-                <div class="callout-label" style="left: 49%; top: 54%">Bottom Mid</div>
-                <div class="callout-label" style="left: 30%; top: 79%">B Site</div>
-                <div class="callout-label" style="left: 28%; top: 88%">Boat House</div>
-                <div class="callout-label" style="left: 35%; top: 66%">B Main</div>
-                <div class="callout-label" style="left: 42%; top: 76%">B Lobby</div>
-                <div class="callout-label" style="left: 23%; top: 67%">B Lane</div>
-                <div class="callout-label spawn-label" style="left: 12%; top: 45%">Defender Spawn</div>
-                <div class="callout-label spawn-label" style="left: 82%; top: 56%">Attacker Spawn</div>
-                <div class="utility-marker smoke" style="left: 61%; top: 39%" title="Smoke"></div>
-                <div class="utility-marker molly" style="left: 75%; top: 25%" title="Molly"></div>
-                <div class="utility-marker scan" style="left: 42%; top: 52%" title="Scan"></div>
               </div>
             </div>
-          </div>
-
-          <div class="popular-strip" aria-label="Popular lineups">
-            <article class="lineup-card active">
-              <span class="lineup-tag">Easy</span>
-              <strong>A Main Molly</strong>
-              <small>Snake Bite / Post</small>
-            </article>
-            <article class="lineup-card">
-              <span class="lineup-tag">Medium</span>
-              <strong>Mid Orb Cloud</strong>
-              <small>Poison Cloud / Attack</small>
-            </article>
-            <article class="lineup-card">
-              <span class="lineup-tag">Easy</span>
-              <strong>B Lane Snake Bite</strong>
-              <small>Snake Bite / Post</small>
-            </article>
           </div>
         </section>
 
         <aside class="details-panel" aria-label="Selected lineup details">
           <div class="lineup-summary">
+            <button class="icon-button bookmark-button save-lineup-button" type="button" aria-label="Save lineup" title="Save lineup" aria-pressed="false">
+              <span class="bookmark-shape" aria-hidden="true"></span>
+            </button>
             <div>
               <p class="eyebrow">Selected lineup</p>
               <h2>A Main Molly</h2>
             </div>
-            <button class="icon-button filled" type="button" aria-label="Save lineup" title="Save lineup">
-              <span class="bookmark-shape" aria-hidden="true"></span>
+            <button class="icon-button close-details-button" type="button" aria-label="Close selected lineup" title="Close selected lineup">
+              <span aria-hidden="true">×</span>
             </button>
           </div>
 
@@ -280,25 +240,31 @@
 
           <div class="steps">
             <article class="step">
-              <div class="step-thumb stand"></div>
-              <div>
+              <div class="step-copy">
                 <span>Stand</span>
                 <strong>A Main corner</strong>
               </div>
+              <figure class="step-media">
+                <span>Image</span>
+              </figure>
             </article>
             <article class="step">
-              <div class="step-thumb aim"></div>
-              <div>
+              <div class="step-copy">
                 <span>Aim</span>
                 <strong>Roof antenna tip</strong>
               </div>
+              <figure class="step-media">
+                <span>Image</span>
+              </figure>
             </article>
             <article class="step">
-              <div class="step-thumb land"></div>
-              <div>
+              <div class="step-copy">
                 <span>Land</span>
                 <strong>Default plant</strong>
               </div>
+              <figure class="step-media">
+                <span>Image</span>
+              </figure>
             </article>
           </div>
 
@@ -314,6 +280,6 @@
         </aside>
       </main>
     </div>
-    <script src="./app.js"></script>
+    <script src="./app.js?v=20260616-details-actions"></script>
   </body>
 </html>
