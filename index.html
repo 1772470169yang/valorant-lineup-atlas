@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lineup Atlas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Lineup Atlas home">
+          <span class="brand-mark">LA</span>
+          <span class="brand-text">Lineup Atlas</span>
+        </a>
+        <label class="search">
+          <span class="search-icon" aria-hidden="true"></span>
+          <input type="search" placeholder="Search map, agent, ability" />
+        </label>
+        <nav class="top-actions" aria-label="Primary">
+          <button class="icon-button" type="button" aria-label="Bookmarks" title="Bookmarks">
+            <span class="bookmark-shape" aria-hidden="true"></span>
+          </button>
+          <div class="theme-toggle" aria-label="Theme selection">
+            <button class="active" type="button" data-theme-option="dark">黑色</button>
+            <button type="button" data-theme-option="light">白色</button>
+          </div>
+          <select aria-label="Language">
+            <option>中文</option>
+            <option>English</option>
+            <option>日本語</option>
+          </select>
+          <button class="profile-button" type="button" aria-label="Profile">R</button>
+        </nav>
+      </header>
+
+      <main class="workspace">
+        <aside class="sidebar" aria-label="Filters">
+          <section class="filter-group">
+            <div class="section-title">Map</div>
+            <div class="source-tabs" aria-label="Lineup source">
+              <button class="active" type="button">官方</button>
+              <button type="button">社区</button>
+              <button type="button">我的</button>
+            </div>
+            <label class="map-select-wrap">
+              <span class="map-dot" aria-hidden="true"></span>
+              <select class="map-select" aria-label="Map selection">
+                <option selected>Ascent</option>
+                <option>Bind</option>
+                <option>Haven</option>
+                <option>Split</option>
+                <option>Lotus</option>
+                <option>Sunset</option>
+                <option>Icebox</option>
+                <option>Pearl</option>
+                <option>Fracture</option>
+                <option>Breeze</option>
+                <option>Abyss</option>
+                <option>Corrode</option>
+              </select>
+              <small class="map-count">8 lineups</small>
+            </label>
+          </section>
+
+          <section class="filter-group">
+            <div class="section-title">Agent</div>
+            <label class="agent-select-wrap">
+              <span class="agent-avatar" aria-hidden="true">
+                <img class="agent-avatar-img" src="https://media.valorant-api.com/agents/707eab51-4836-f488-046a-cda6bf494859/displayicon.png" alt="" />
+              </span>
+              <select class="agent-select" aria-label="Agent selection">
+                <optgroup label="Controller">
+                  <option selected>Viper</option>
+                  <option>Astra</option>
+                  <option>Brimstone</option>
+                  <option>Clove</option>
+                  <option>Harbor</option>
+                  <option>Miks</option>
+                  <option>Omen</option>
+                </optgroup>
+                <optgroup label="Duelist">
+                  <option>Iso</option>
+                  <option>Jett</option>
+                  <option>Neon</option>
+                  <option>Phoenix</option>
+                  <option>Raze</option>
+                  <option>Reyna</option>
+                  <option>Waylay</option>
+                  <option>Yoru</option>
+                </optgroup>
+                <optgroup label="Initiator">
+                  <option>Breach</option>
+                  <option>Fade</option>
+                  <option>Gekko</option>
+                  <option>KAY/O</option>
+                  <option>Skye</option>
+                  <option>Sova</option>
+                  <option>Tejo</option>
+                </optgroup>
+                <optgroup label="Sentinel">
+                  <option>Chamber</option>
+                  <option>Cypher</option>
+                  <option>Deadlock</option>
+                  <option>Killjoy</option>
+                  <option>Sage</option>
+                  <option>Veto</option>
+                  <option>Vyse</option>
+                </optgroup>
+              </select>
+            </label>
+          </section>
+
+          <section class="filter-group">
+            <div class="section-title">Ability</div>
+            <div class="ability-list">
+              <label class="check-row">
+                <input type="checkbox" checked />
+                <span>Snake Bite</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" checked />
+                <span>Poison Cloud</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" />
+                <span>Toxic Screen</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="filter-group">
+            <div class="section-title">Scenario</div>
+            <div class="segmented">
+              <button class="active" type="button">Attack</button>
+              <button type="button">Defense</button>
+              <button type="button">Post</button>
+            </div>
+          </section>
+
+          <section class="filter-group">
+            <div class="section-title">阵营</div>
+            <div class="side-tabs" aria-label="Side filter">
+              <button class="active" type="button">所有阵营</button>
+              <button type="button">进攻方</button>
+              <button type="button">防守方</button>
+            </div>
+          </section>
+
+          <section class="filter-group">
+            <div class="section-title">其他选项</div>
+            <div class="option-list">
+              <label class="switch-row">
+                <input class="toggle-callouts" type="checkbox" checked />
+                <span>显示呼叫点位</span>
+              </label>
+              <label class="switch-row">
+                <input class="toggle-utility" type="checkbox" checked />
+                <span>显示道具</span>
+              </label>
+            </div>
+          </section>
+        </aside>
+
+        <section class="map-stage" aria-label="Lineup map">
+          <div class="stage-header">
+            <div>
+              <p class="eyebrow">Ascent / Viper</p>
+              <h1>Post-plant utility map</h1>
+            </div>
+            <div class="stage-actions">
+              <button class="tool-button active" type="button">Pins</button>
+              <button class="tool-button" type="button">Paths</button>
+              <button class="tool-button" type="button">Grid</button>
+            </div>
+          </div>
+
+          <div class="map-frame">
+            <div class="map-control-left">
+              <button class="map-control rotate-map" type="button" aria-label="Rotate map 90 degrees" title="Rotate 90 degrees">
+                <svg class="rotate-90-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+                  <path d="M8 11a4 4 0 0 1 6.8-2.8L16 9.4"></path>
+                  <path d="M16 6v3.5h-3.5"></path>
+                  <path d="M16 13a4 4 0 0 1-6.8 2.8L8 14.6"></path>
+                  <path d="M8 18v-3.5h3.5"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="map-control-right" aria-label="Map zoom controls">
+              <button class="map-control zoom-out" type="button" aria-label="Zoom out">−</button>
+              <span class="zoom-level">100%</span>
+              <button class="map-control zoom-in" type="button" aria-label="Zoom in">+</button>
+            </div>
+            <div class="map-canvas">
+              <div class="rotating-map-layer">
+                <img class="map-art" src="https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/displayicon.png" alt="Ascent tactical map with lineup pins" draggable="false" />
+                <div class="callout-label" style="left: 30%; top: 16%">A Site</div>
+                <div class="callout-label" style="left: 23%; top: 13%">A Heaven</div>
+                <div class="callout-label" style="left: 30%; top: 19%">Generator</div>
+                <div class="callout-label" style="left: 36%; top: 25%">A Door</div>
+                <div class="callout-label" style="left: 28%; top: 31%">Garden</div>
+                <div class="callout-label" style="left: 39%; top: 31%">Tree</div>
+                <div class="callout-label" style="left: 43%; top: 18%">A Main</div>
+                <div class="callout-label" style="left: 48%; top: 8%">Wine</div>
+                <div class="callout-label" style="left: 50%; top: 15%">A Lobby</div>
+                <div class="callout-label" style="left: 52%; top: 43%">Pizza</div>
+                <div class="callout-label" style="left: 53%; top: 51%">Market</div>
+                <div class="callout-label" style="left: 53%; top: 58%">Mid</div>
+                <div class="callout-label" style="left: 62%; top: 34%">Catwalk</div>
+                <div class="callout-label" style="left: 70%; top: 64%">Top Mid</div>
+                <div class="callout-label" style="left: 49%; top: 54%">Bottom Mid</div>
+                <div class="callout-label" style="left: 30%; top: 79%">B Site</div>
+                <div class="callout-label" style="left: 28%; top: 88%">Boat House</div>
+                <div class="callout-label" style="left: 35%; top: 66%">B Main</div>
+                <div class="callout-label" style="left: 42%; top: 76%">B Lobby</div>
+                <div class="callout-label" style="left: 23%; top: 67%">B Lane</div>
+                <div class="callout-label spawn-label" style="left: 12%; top: 45%">Defender Spawn</div>
+                <div class="callout-label spawn-label" style="left: 82%; top: 56%">Attacker Spawn</div>
+                <div class="utility-marker smoke" style="left: 61%; top: 39%" title="Smoke"></div>
+                <div class="utility-marker molly" style="left: 75%; top: 25%" title="Molly"></div>
+                <div class="utility-marker scan" style="left: 42%; top: 52%" title="Scan"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="popular-strip" aria-label="Popular lineups">
+            <article class="lineup-card active">
+              <span class="lineup-tag">Easy</span>
+              <strong>A Main Molly</strong>
+              <small>Snake Bite / Post</small>
+            </article>
+            <article class="lineup-card">
+              <span class="lineup-tag">Medium</span>
+              <strong>Mid Orb Cloud</strong>
+              <small>Poison Cloud / Attack</small>
+            </article>
+            <article class="lineup-card">
+              <span class="lineup-tag">Easy</span>
+              <strong>B Lane Snake Bite</strong>
+              <small>Snake Bite / Post</small>
+            </article>
+          </div>
+        </section>
+
+        <aside class="details-panel" aria-label="Selected lineup details">
+          <div class="lineup-summary">
+            <div>
+              <p class="eyebrow">Selected lineup</p>
+              <h2>A Main Molly</h2>
+            </div>
+            <button class="icon-button filled" type="button" aria-label="Save lineup" title="Save lineup">
+              <span class="bookmark-shape" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="video-preview">
+            <div class="play-dot" aria-hidden="true"></div>
+            <span>00:18</span>
+          </div>
+
+          <div class="meta-grid">
+            <div>
+              <small>Side</small>
+              <strong>Attack</strong>
+            </div>
+            <div>
+              <small>Ability</small>
+              <strong>Snake Bite</strong>
+            </div>
+            <div>
+              <small>Difficulty</small>
+              <strong>Easy</strong>
+            </div>
+            <div>
+              <small>Verified</small>
+              <strong>v10.11</strong>
+            </div>
+          </div>
+
+          <div class="steps">
+            <article class="step">
+              <div class="step-thumb stand"></div>
+              <div>
+                <span>Stand</span>
+                <strong>A Main corner</strong>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step-thumb aim"></div>
+              <div>
+                <span>Aim</span>
+                <strong>Roof antenna tip</strong>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step-thumb land"></div>
+              <div>
+                <span>Land</span>
+                <strong>Default plant</strong>
+              </div>
+            </article>
+          </div>
+
+          <div class="detail-actions">
+            <button class="primary-action" type="button">Open guide</button>
+            <button class="secondary-action" type="button">Share</button>
+          </div>
+
+          <div class="notes">
+            <strong>Timing</strong>
+            <p>Throw after spike tap. Works from A Main without exposing to Heaven.</p>
+          </div>
+        </aside>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
